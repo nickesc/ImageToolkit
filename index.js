@@ -9,7 +9,7 @@ if (platform == "darwin") binPath = "bin/macos/";
 
 const gm = require("gm").subClass({
   imageMagick: "7+",
-  appPath: binPath
+  //appPath: binPath
 });
 
 app = express();
