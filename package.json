@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"no test specified\"",
-    "build": "npm install",
+    "build": "npm install && magick identify -version",
     "start": "node index.js"
   },
   "author": "N. Escobar <nick@nescobar.media> (https://nickesc.github.io/)",
