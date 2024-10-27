@@ -4,14 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"no test specified\"",
-    "build": "npm install && magick identify -version",
-    "start": "node index.js"
+    "build": "npm install",
+    "start": "export NODE_ENV=prod && nodemon server/server.js",
+    "dev": "export NODE_ENV=dev && nodemon server/server.js",
+    "test": "export NODE_ENV=test && nodemon server/server.js"
   },
   "author": "N. Escobar <nick@nescobar.media> (https://nickesc.github.io/)",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "gm": "^1.25.0"
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "supertest": "^7.0.0"
   }
 }
