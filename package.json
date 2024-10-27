@@ -8,8 +8,7 @@
     "server"
   ],
   "scripts": {
-    "prod-build": "npm install --omit=dev && npm run build --workspace=gui",
-    "dev-build": "npm install && npm run build --workspace=gui",
+    "build": "npm install && npm run build --workspace=gui",
     "prod": "npm start --workspace=server",
     "dev": "npm run dev --workspace=server",
     "test": "",

@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "prod-build": "npm install --omit=dev",
-    "dev-build": "npm install",
+    "build": "npm install",
     "prod": "export NODE_ENV=production && node server.js",
     "dev": "export NODE_ENV=development && nodemon server.js",
     "test": "export NODE_ENV=test && nodemon server.js",
