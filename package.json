@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm install",
-    "start": "export NODE_ENV=prod && nodemon server/server.js",
-    "dev": "export NODE_ENV=dev && nodemon server/server.js",
-    "test": "export NODE_ENV=test && nodemon server/server.js"
+    "prod-build": "npm install --omit=dev",
+    "dev-build": "npm install",
+    "prod": "export NODE_ENV=production && node server/server.js",
+    "dev": "export NODE_ENV=development && nodemon server/server.js",
+    "test": "export NODE_ENV=test && nodemon server/server.js",
+    "start": "npm run prod"
   },
   "author": "N. Escobar <nick@nescobar.media> (https://nickesc.github.io/)",
   "license": "MIT",
