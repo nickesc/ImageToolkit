@@ -1,5 +1,6 @@
 const Paths = require("./src/utils/paths")
 
+// Set the environment
 const dotenv = require('dotenv');
 dotenv.config({path: Paths.env.env});
 switch (process.env.NODE_ENV){
@@ -20,10 +21,20 @@ switch (process.env.NODE_ENV){
         process.exit(1);
 }
 
+// Create the App from our app.js file
 const app = require(Paths.app.app);
-const PORT = process.env.PORT || 3000;
 
-/*
+const PORT = process.env.PORT || 3000;
+let portString;
+switch (process.env.NODE_ENV){
+    case "production":
+        portString = "";
+        break;
+    default:
+        portString = `:${PORT}`
+        break;
+}
+
 // Handle unexpected errors that weren't caught elsewhere
 process.on('uncaughtException', (error) => {
     console.error('Uncaught Exception:', error);
@@ -34,18 +45,7 @@ process.on('uncaughtException', (error) => {
 process.on('unhandledRejection', (error) => {
     console.error('Unhandled Rejection:', error);
     process.exit(1);
-}); */
-
-let portString;
-
-switch (process.env.NODE_ENV){
-    case "production":
-        portString = "";
-        break;
-    default:
-        portString = `:${PORT}`
-        break;
-}
+});
 
 // Start the server
 const server = app.listen(PORT, () => {
