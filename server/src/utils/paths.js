@@ -1,9 +1,9 @@
 class Paths{
     static env = {
-        env: "./server/.env",
-        prod: "./server/.env.prod",
-        dev: "./server/.env.dev",
-        test: "./server/.env.test"
+        env: "./.env",
+        prod: "./.env.prod",
+        dev: "./.env.dev",
+        test: "./.env.test"
     }
 
     static app = {

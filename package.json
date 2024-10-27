@@ -2,27 +2,22 @@
   "name": "imagetoolkit",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "",
+  "workspaces": [
+    "gui",
+    "server"
+  ],
   "scripts": {
-    "prod-build": "npm install --omit=dev",
-    "dev-build": "npm install",
-    "prod": "export NODE_ENV=production && node server/server.js",
-    "dev": "export NODE_ENV=development && nodemon server/server.js",
-    "test": "export NODE_ENV=test && nodemon server/server.js",
+    "prod-build": "npm install --omit=dev && npm run build --workspace=gui",
+    "dev-build": "npm install && npm run build --workspace=gui",
+    "prod": "npm start --workspace=server",
+    "dev": "npm run dev --workspace=server",
+    "test": "",
     "start": "npm run prod"
   },
   "author": "N. Escobar <nick@nescobar.media> (https://nickesc.github.io/)",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.5-lts.1",
-    "sharp": "^0.33.5"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "nodemon": "^3.1.7",
-    "supertest": "^7.0.0"
+    "concurrently": "^9.0.1"
   }
 }

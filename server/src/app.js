@@ -4,6 +4,7 @@ const path = require('path');
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, '../../gui/build')))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
@@ -13,6 +14,11 @@ const uploadsDir = path.join(__dirname, '../uploads');
 if (!require('fs').existsSync(uploadsDir)){
     require('fs').mkdirSync(uploadsDir);
 }
+
+// root endpoint
+//app.get('/', (req, res) => {
+//    res.status(200).sendFile(path.join(__dirname, 'public'));
+//});
 
 // Health check endpoint
 app.get('/health', (req, res) => {
